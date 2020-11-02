@@ -1,0 +1,10 @@
+{
+  "name": "singlewinbrowser",
+  "author": "pantheonlbs",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^10.1.5"
+  }
+}
