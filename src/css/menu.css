@@ -17,8 +17,9 @@
     padding: 5px 10px;
     background: transparent;
     transition-property: background-color;
-    transition-duration: .2s;
-	transition-timing-function: linear;
+    transition-duration: .1s;
+    transition-timing-function: linear;
+    cursor: pointer;
 }
 
 .menu .menu-item:hover {
@@ -27,4 +28,5 @@
 
 .menu-item .text {
     margin-left: 1em;
+    font-size: small;
 }
