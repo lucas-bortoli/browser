@@ -1,10 +1,12 @@
 @import url('fonts.css');
+@import url('menu.css');
 
 textarea, select, input, button { outline: none; }
 
 body {
     margin: 0;
     overflow: hidden;
+    font-family: 'Noto Sans';
 }
 
 /** the page webview **/
@@ -38,8 +40,8 @@ body {
 .status-menu > * {
     margin: 0 2px;
     transition-property: background-color;
-    transition-duration: 0.5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-duration: .2s;
+	transition-timing-function: linear;
 }
 
 .status-menu button {

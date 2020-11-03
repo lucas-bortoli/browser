@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="browser_ui.css">
+        <link rel="stylesheet" href="css/browser_ui.css">
     </head>
     <body>
         <webview id="content" class="webpage" preload="js/preload.js" src="https://ddg.gg"></webview>
-        <div id="status-menu" class="status-menu">
+        <div id="status-menu" class="status-menu open">
             <button id="back" class="disabled">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -19,6 +19,17 @@
             <button id="menu">
                 <i class="material-icons">menu</i>
             </button>
+        </div>
+
+        <div id="popup-menu" class="menu">
+            <div class="menu-item">
+                <i class="material-icons">home</i>
+                <span class="text">Home</span>
+            </div>
+            <div class="menu-item">
+                <i class="material-icons">star</i>
+                <span class="text">Add to bookmarks</span>
+            </div>
         </div>
 
         <script>require('./js/browser')</script>
