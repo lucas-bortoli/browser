@@ -22,8 +22,11 @@ class ContextMenu {
             label_element.classList.add('text')
             label_element.innerText = opt.label
 
-            if (opt.click) 
-                opt_element.addEventListener('click', e => { this.close(); opt.click(e) })
+            opt_element.addEventListener('click', e => { 
+                this.close()
+                if (opt.click)
+                    opt.click(e) 
+            })
 
             opt_element.appendChild(icon_element)
             opt_element.appendChild(label_element)
