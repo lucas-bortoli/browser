@@ -9,7 +9,6 @@
     background: #ffffff;
     font-family: 'Noto Sans';
     user-select: none;
-
     opacity: 0;
     transition-property: transform, opacity;
 	transition-duration: 0.1s;
@@ -36,6 +35,7 @@
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     cursor: pointer;
     border: none;
+    color: #212121;
 }
 
 .menu .menu-item:hover {
