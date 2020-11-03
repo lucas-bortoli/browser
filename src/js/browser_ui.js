@@ -65,4 +65,11 @@ homeButton.addEventListener('click', () => {
     close_bar()
     webView.focus()
 })
+document.querySelector('#open-dev-tools').addEventListener('click', () => {
+    webView.openDevTools()
+    close_popup_menu()
+    close_bar()
+    webView.focus()
+})
+
 webView.focus()
