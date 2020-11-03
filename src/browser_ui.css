@@ -1,0 +1,99 @@
+@import url('fonts.css');
+
+textarea, select, input, button { outline: none; }
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+/** the page webview **/
+.webpage {
+    width: 100vw;
+    height: 100vh;
+}
+
+.status-menu {
+    width: 100vw;
+    height: 40px;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    transition-property: transform;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transform: translate(0, 50px);
+    align-items: center;
+    user-select: none;
+}
+
+.status-menu.open {
+    transform: translate(0, 0);
+}
+
+.status-menu > * {
+    margin: 0 2px;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.status-menu button {
+    width: 60px;
+    height: 100%;
+    vertical-align: middle;
+    border: none;
+    background: transparent;
+    color: #828282;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.status-menu button:not(.disabled):hover {
+    background: #dedede;
+}
+
+.status-menu button:not(.disabled):active {
+    background: #c5c5c5;
+}
+
+.status-menu button.disabled {
+    color: #aaaaaa;
+    cursor: default;
+}
+
+.status-menu button > i {
+    vertical-align: middle;
+}
+
+.url-box {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    padding: 6px;
+    border-radius: 18px;
+    flex-grow: 1;
+    color: #828282;
+}
+
+.url-box:hover {
+    background: #dedede;
+}
+
+.url-box > input {
+    background: transparent;
+    border: none;
+    flex-grow: 1;
+    color: #212121;
+    margin: 0 0.3em;
+    text-align: center;
+}
+
+.url-box > input::selection {
+    background: #424242;
+    color: #dedede;
+}

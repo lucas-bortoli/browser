@@ -4,8 +4,23 @@
         <link rel="stylesheet" href="browser_ui.css">
     </head>
     <body>
-        <h1>Focus</h1>
-        <webview id="content" class="webpage" src="https://ddg.gg"></webview>
-        <div id="status-menu" class="status-menu"></div>
+        <webview id="content" class="webpage" preload="js/preload.js" src="https://ddg.gg"></webview>
+        <div id="status-menu" class="status-menu">
+            <button id="back" class="disabled">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            <button id="forward">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+            <div class="url-box">
+                <i class="material-icons">search</i>
+                <input id="url-input" spellcheck="false" type="text" placeholder="Search...">
+            </div>
+            <button id="menu">
+                <i class="material-icons">menu</i>
+            </button>
+        </div>
+
+        <script>require('./js/browser')</script>
     </body>
 </html>

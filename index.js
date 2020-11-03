@@ -4,9 +4,11 @@ const electron = require('electron')
 app.once('ready', () => {
     const win = new electron.BrowserWindow({
         webPreferences: {
-            webviewTag: true
+            webviewTag: true,
+            nodeIntegration: true
         }
     })
 
     win.loadFile('src/index.html')
+    win.setMenuBarVisibility(false)
 })

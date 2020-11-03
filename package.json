@@ -5,6 +5,8 @@
     "start": "electron ."
   },
   "dependencies": {
-    "electron": "^10.1.5"
+    "electron": "^10.1.5",
+    "shortcuts": "^1.6.1",
+    "valid-url": "^1.0.9"
   }
 }
