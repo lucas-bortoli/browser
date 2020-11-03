@@ -4,9 +4,13 @@ const webView = document.querySelector('#content')
 const statusMenu = document.querySelector('#status-menu')
 const backButton = document.querySelector('#back')
 const forwardButton = document.querySelector('#forward')
-const menuButton = document.querySelector('#menu')
+const popupMenuButton = document.querySelector('#popup-menu-button')
+const popupMenu = document.querySelector('#popup-menu')
 const urlInput = document.querySelector('#url-input')
+const homeButton = document.querySelector('#button-home')
 
+const close_popup_menu = () => popupMenu.classList.remove('open')
+const open_popup_menu = () => popupMenu.classList.add('open')
 const close_bar = () => statusMenu.classList.remove('open')
 const open_bar = () => statusMenu.classList.add('open')
 
@@ -23,6 +27,7 @@ webView.addEventListener('ipc-message', e => {
             urlInput.focus()
         }, 300)
     } else if (task === 'closeBar') {
+        close_popup_menu()
         close_bar()
     }
 })
@@ -35,6 +40,7 @@ webView.addEventListener('load-commit', () => {
 
 document.addEventListener('keyup', e => {
     if (e.key == 'Alt' || e.key == 'Escape') {
+        close_popup_menu()
         close_bar()
         webView.focus()
     }
@@ -42,6 +48,7 @@ document.addEventListener('keyup', e => {
     if (e.key === 'Enter' && e.target === urlInput) {
         if (urlInput.value.length > 0) {
             load_url(webView, urlInput.value)
+            close_popup_menu()
             close_bar()
             webView.focus()
         }
@@ -51,4 +58,11 @@ document.addEventListener('keyup', e => {
 backButton.addEventListener('click', () => webView.goBack())
 forwardButton.addEventListener('click', () => webView.goForward())
 
+popupMenuButton.addEventListener('click', () => open_popup_menu())
+homeButton.addEventListener('click', () => { 
+    load_url(webView, 'https://ddg.gg')
+    close_popup_menu()
+    close_bar()
+    webView.focus()
+})
 webView.focus()

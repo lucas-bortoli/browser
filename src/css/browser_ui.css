@@ -60,6 +60,10 @@ body {
     background: #dedede;
 }
 
+.status-menu button:not(.disabled):focus {
+    background: #dedede;
+}
+
 .status-menu button:not(.disabled):active {
     background: #c5c5c5;
 }
