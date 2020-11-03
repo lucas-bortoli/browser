@@ -24,6 +24,14 @@
     pointer-events: all;
 }
 
+.menu .separator {
+    margin: 5px 10px;
+    height: 1px;
+    background: #aaaaaa;
+    border: none;
+    display: block;
+}
+
 .menu .menu-item {
     display: flex;
     flex-direction: row;
