@@ -17,8 +17,8 @@
     padding: 5px 10px;
     background: transparent;
     transition-property: background-color;
-    transition-duration: .1s;
-    transition-timing-function: linear;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     cursor: pointer;
 }
 
