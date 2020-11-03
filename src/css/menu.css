@@ -1,20 +1,21 @@
 .menu {
     position: absolute;
     bottom: 55px;
-    right: 10px;
+    right: 20px;
     width: 300px;
     display: flex;
     flex-direction: column;
     border: 1px solid #aaaaaa;
     background: #ffffff;
     font-family: 'Noto Sans';
+    user-select: none;
 }
 
 .menu .menu-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 5px 10px;
+    padding: 7px 15px;
     background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
@@ -24,6 +25,10 @@
 
 .menu .menu-item:hover {
     background: #dedede;
+}
+
+.menu .menu-item:active {
+    background: #c5c5c5;
 }
 
 .menu-item .text {
