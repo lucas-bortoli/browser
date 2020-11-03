@@ -39,7 +39,7 @@ body {
 }
 
 .status-menu > * {
-    margin: 0 2px;
+    margin: 0 0px;
     transition-property: background-color;
     transition-duration: .2s;
 	transition-timing-function: linear;
@@ -52,7 +52,6 @@ body {
     border: none;
     background: transparent;
     color: #828282;
-    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -82,7 +81,7 @@ body {
     flex-direction: row;
     background: transparent;
     padding: 6px;
-    border-radius: 18px;
+    border-radius: 0px;
     flex-grow: 1;
     color: #828282;
 }
