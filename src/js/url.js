@@ -2,7 +2,7 @@ const forbidden_url_chars = [ ' ' ]
 
 /**
  * Checks if a string is good enough to pass off as an URL for us
- * DON'T TRUST THIS!
+ * DON'T TRUST THIS! It has a bunch of edge cases but I don't care
  * @param {string} url 
  * @returns {boolean}
  */
