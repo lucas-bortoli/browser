@@ -46,15 +46,20 @@
     color: #212121;
 }
 
-.menu .menu-item:hover {
+.menu .menu-item.disabled {
+    color: #808080;
+    cursor: default;
+}
+
+.menu .menu-item:not(.disabled):hover {
     background: #dedede;
 }
 
-.menu .menu-item:focus {
+.menu .menu-item:not(.disabled):focus {
     background: #dedede;
 }
 
-.menu .menu-item:active {
+.menu .menu-item:not(.disabled):active {
     background: #c5c5c5;
 }
 

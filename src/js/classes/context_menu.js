@@ -13,6 +13,8 @@ class ContextMenu {
         for (let opt of opts) {
             let opt_element = document.createElement('button')
             opt_element.classList.add('menu-item')
+            if (opt.disabled)
+                opt_element.classList.add('disabled')
 
             let icon_element = document.createElement('i')
             icon_element.classList.add('material-icons')
@@ -22,11 +24,12 @@ class ContextMenu {
             label_element.classList.add('text')
             label_element.innerText = opt.label
 
-            opt_element.addEventListener('click', e => { 
-                this.close()
-                if (opt.click)
-                    opt.click(e) 
-            })
+            if (!opt.disabled)
+                opt_element.addEventListener('click', e => { 
+                    this.close()
+                    if (opt.click)
+                        opt.click(e) 
+                })
 
             opt_element.appendChild(icon_element)
             opt_element.appendChild(label_element)

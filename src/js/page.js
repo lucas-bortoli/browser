@@ -30,13 +30,12 @@ webView.addEventListener('ipc-message', e => {
                     click: () => clipboard.writeText(target.url)
                 })
             } else if (target.type === 'input') {
-                if (target.canCopy) {
-                    menu_elements.push({
-                        icon: 'content_copy',
-                        label: 'Copy selection',
-                        click: () => webView.send('context-menu-copy')
-                    })
-                }
+                menu_elements.push({
+                    icon: 'content_copy',
+                    label: 'Copy selection',
+                    disabled: !target.canCopy,
+                    click: () => webView.send('context-menu-copy')
+                })
 
                 menu_elements.push({
                     icon: 'content_paste',
