@@ -1,6 +1,6 @@
 const { clipboard, ipcRenderer } = require('electron')
 
-const ContextMenu = require('./context_menu')
+const ContextMenu = require('./classes/context_menu')
 
 const webView = document.querySelector('#content')
 
