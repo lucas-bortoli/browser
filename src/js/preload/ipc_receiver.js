@@ -8,6 +8,8 @@ ipcRenderer.on('context-menu-paste', ev => {
 
     _$browser_contextmenu_element.focus()
     document.execCommand('paste')
+    _$browser_contextmenu_element.selectionStart = 0
+    _$browser_contextmenu_element.selectionEnd = 0
 })
 
 ipcRenderer.on('context-menu-copy', ev => {

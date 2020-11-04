@@ -42,6 +42,15 @@ webView.addEventListener('ipc-message', e => {
                     label: 'Paste',
                     click: () => webView.send('context-menu-paste')
                 })
+            } else {
+                if (target.canCopy) {
+                    menu_elements.push({
+                        icon: 'content_copy',
+                        label: 'Copy selection',
+                        disabled: !target.canCopy,
+                        click: () => webView.send('context-menu-copy')
+                    })
+                }
             }
         }
 

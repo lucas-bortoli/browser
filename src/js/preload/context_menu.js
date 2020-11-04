@@ -6,20 +6,21 @@ window.addEventListener('contextmenu', e => {
 
             /*
                 {
-                    "type": "link"|"image"|"input",
+                    "type": "link"|"image"|"input"|"other",
                     "url": "https://..."
                 }
             */
     let targets = []
 
-    if (e.target.tagName === 'A')
+    if (e.target.tagName === 'A') {
         targets.push({ 'type': 'link', 'url': e.target.href })
-
-    if (e.target.tagName === 'IMG')
+    } else if (e.target.tagName === 'IMG') {
         targets.push({ 'type': 'image', 'url': e.target.src })
-    
-    if (e.target.tagName === 'INPUT')
-        targets.push({ 'type': 'input', 'url': null, 'canCopy': e.target.selectionStart !== e.target.selectionEnd })
+    } else if (e.target.tagName === 'INPUT') {
+        targets.push({ 'type': 'input', 'canCopy': e.target.selectionStart !== e.target.selectionEnd })
+    } else {
+        targets.push({ 'type': 'other', 'canCopy': getSelection().type === 'Range' })
+    }
 
     window._$browser_contextmenu_element = e.target
 
