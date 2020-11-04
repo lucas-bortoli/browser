@@ -32,6 +32,13 @@
     display: block;
 }
 
+.menu .section-title {
+    font-size: x-small;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    margin-top: 10px;
+}
+
 .menu .menu-item {
     display: flex;
     flex-direction: row;
