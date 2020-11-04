@@ -1,0 +1,78 @@
+@import url('./fonts.css');
+
+textarea, select, input, button { outline: none; }
+
+body {
+    color: #212121;
+    font-family: 'Noto Sans';
+    margin: 4em;
+    user-select: none;
+}
+
+button {
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    padding: .7em 2em;
+    transition-property: background-color;
+    transition-duration: .1s;
+	transition-timing-function: linear;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #dedede;
+}
+
+button:active {
+    background: #c5c5c5;
+}
+
+.status .counter {
+    font-size: small;
+}
+
+.list {
+    margin-top: 2em;
+}
+
+.entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .5em;
+    background: #ffffff;
+    transition-property: background-color;
+    transition-duration: .1s;
+	transition-timing-function: cubic-bezier(0, 1, 0);
+}
+
+.entry:hover {
+    background: #dedede;
+}
+
+.entry .info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0;
+}
+
+.entry .info .title {
+    font-size: small;
+}
+.entry .info .url {
+    font-size: smaller;
+    color: #111111;
+}
+
+.entry .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.entry .actions button {
+    padding: .1em;
+    margin: .1em;
+}
