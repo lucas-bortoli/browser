@@ -19,7 +19,7 @@ window.addEventListener('contextmenu', e => {
         targets.push({ 'type': 'image', 'url': e.target.src })
     
     if (e.target.tagName === 'INPUT')
-        targets.push({ 'type': 'input', 'url': null })
+        targets.push({ 'type': 'input', 'url': null, 'canCopy': e.target.selectionStart !== e.target.selectionEnd })
 
     window._$browser_contextmenu_element = e.target
 

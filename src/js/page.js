@@ -1,6 +1,7 @@
 const { clipboard, ipcRenderer } = require('electron')
 
 const ContextMenu = require('./classes/context_menu')
+const UI = require('./ui/ui')
 
 const webView = document.querySelector('#content')
 
@@ -29,6 +30,14 @@ webView.addEventListener('ipc-message', e => {
                     click: () => clipboard.writeText(target.url)
                 })
             } else if (target.type === 'input') {
+                if (target.canCopy) {
+                    menu_elements.push({
+                        icon: 'content_copy',
+                        label: 'Copy selection',
+                        click: () => webView.send('context-menu-copy')
+                    })
+                }
+
                 menu_elements.push({
                     icon: 'content_paste',
                     label: 'Paste',
@@ -44,6 +53,8 @@ webView.addEventListener('ipc-message', e => {
         })
 
         ctx_menu = new ContextMenu(data.x, data.y, menu_elements)
+
+        UI.open_bar()
     } else if (e.channel === 'webview-context-menu-close') {
         if (ctx_menu) 
             ctx_menu.close()
