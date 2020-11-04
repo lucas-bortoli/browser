@@ -1,4 +1,4 @@
-const { clipboard } = require('electron')
+const { clipboard, ipcRenderer } = require('electron')
 
 const ContextMenu = require('./context_menu')
 
@@ -27,6 +27,12 @@ webView.addEventListener('ipc-message', e => {
                     icon: 'content_copy',
                     label: 'Copy image link',
                     click: () => clipboard.writeText(target.url)
+                })
+            } else if (target.type === 'input') {
+                menu_elements.push({
+                    icon: 'content_paste',
+                    label: 'Paste',
+                    click: () => webView.send('context-menu-paste')
                 })
             }
         }

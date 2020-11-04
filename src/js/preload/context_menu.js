@@ -6,7 +6,7 @@ window.addEventListener('contextmenu', e => {
 
             /*
                 {
-                    "type": "link"|"image",
+                    "type": "link"|"image"|"input",
                     "url": "https://..."
                 }
             */
@@ -17,6 +17,11 @@ window.addEventListener('contextmenu', e => {
 
     if (e.target.tagName === 'IMG')
         targets.push({ 'type': 'image', 'url': e.target.src })
+    
+    if (e.target.tagName === 'INPUT')
+        targets.push({ 'type': 'input', 'url': null })
+
+    window._$browser_contextmenu_element = e.target
 
     ipcRenderer.sendToHost('webview-context-menu-open', {
         x: e.clientX,

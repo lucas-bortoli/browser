@@ -17,4 +17,5 @@ Object.entries(KEYMAP).forEach(([task, shortcut]) => {
 
 window.addEventListener('click', () => ipcRenderer.sendToHost('webview-task', { task:  'closeBar' }))
 
+require('./ipc_receiver')
 require('./context_menu')

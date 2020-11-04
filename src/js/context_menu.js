@@ -42,7 +42,8 @@ class ContextMenu {
     }
 
     close() {
-        this.element.remove()
+        if (this.element)
+            this.element.remove()
     }
 }
 
