@@ -1,3 +1,4 @@
+const path = require('path')
 const { elements, open_bar, open_popup_menu, close_bar, close_popup_menu } = require('./ui')
 const { load_url } = require('../url')
 
@@ -60,4 +61,8 @@ elements.popupMenu.devToolsButton.addEventListener('click', () => {
     close_popup_menu()
     close_bar()
     elements.webView.focus()
+})
+
+elements.popupMenu.historyButton.addEventListener('click', () => {
+    load_url(elements.webView, `file://${path.resolve(__dirname, '../../pages/history.html')}`)
 })

@@ -13,7 +13,8 @@ const UI = {
         popupMenu: {
             popupMenu: document.querySelector('#popup-menu'),
             homeButton: document.querySelector('#button-home'),
-            devToolsButton: document.querySelector('#open-dev-tools')
+            devToolsButton: document.querySelector('#open-dev-tools'),
+            historyButton: document.querySelector('#button-history')
         }
     },
     open_popup_menu: () => UI.elements.popupMenu.popupMenu.classList.add('open'),
