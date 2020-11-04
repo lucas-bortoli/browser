@@ -65,4 +65,14 @@ elements.popupMenu.devToolsButton.addEventListener('click', () => {
 
 elements.popupMenu.historyButton.addEventListener('click', () => {
     load_url(elements.webView, `file://${path.resolve(__dirname, '../../pages/history.html')}`)
+    close_popup_menu()
+    //close_bar()
+    elements.webView.focus()
+})
+
+elements.popupMenu.viewBookmarksButton.addEventListener('click', () => {
+    load_url(elements.webView, `file://${path.resolve(__dirname, '../../pages/bookmarks.html')}`)
+    close_popup_menu()
+    //close_bar()
+    elements.webView.focus()
 })
