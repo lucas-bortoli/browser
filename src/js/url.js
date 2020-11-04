@@ -29,7 +29,7 @@ const load_url = (wv, query) => {
     if (is_valid_url(query)) {
         let url = query
 
-        if (query.substring(0, 7) !== 'http://' && query.substring(0, 8) !== 'https://')
+        if (!query.startsWith('http://') && !query.startsWith('https://') && !query.startsWith('file://'))
             url = `http://${query}`
 
         wv.loadURL(url)

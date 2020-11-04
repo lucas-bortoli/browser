@@ -19,3 +19,4 @@ window.addEventListener('click', () => ipcRenderer.sendToHost('webview-task', { 
 
 require('./ipc_receiver')
 require('./context_menu')
+require('./trusted_page')
