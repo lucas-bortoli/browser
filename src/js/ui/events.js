@@ -28,6 +28,11 @@ elements.webView.addEventListener('load-commit', () => {
     elements.statusMenu.urlInput.value = elements.webView.src
 })
 
+elements.webView.addEventListener('page-title-updated', ev => {
+    elements.statusMenu.urlInput.value = elements.webView.src
+    document.title = ev.title
+})
+
 document.addEventListener('keyup', e => {
     if (e.key == 'Alt' || e.key == 'Escape') {
         close_popup_menu()

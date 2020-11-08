@@ -3,6 +3,7 @@ const electron = require('electron')
 
 app.once('ready', () => {
     const win = new electron.BrowserWindow({
+        icon: 'src/images/icon.png',
         webPreferences: {
             webviewTag: true,
             nodeIntegration: true,
