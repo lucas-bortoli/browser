@@ -1,6 +1,6 @@
 const path = require('path')
 const { elements, open_bar, open_popup_menu, close_bar, close_popup_menu } = require('./ui')
-const { load_url } = require('../url')
+const { load_url, make_file_url_from_relative } = require('../url')
 
 elements.webView.addEventListener('ipc-message', e => {
     if (e.channel !== 'webview-task') return
@@ -64,14 +64,14 @@ elements.popupMenu.devToolsButton.addEventListener('click', () => {
 })
 
 elements.popupMenu.historyButton.addEventListener('click', () => {
-    load_url(elements.webView, `file://${path.resolve(__dirname, '../../pages/history.html')}`)
+    load_url(elements.webView, make_file_url_from_relative('../pages/history.html'), true)
     close_popup_menu()
     //close_bar()
     elements.webView.focus()
 })
 
 elements.popupMenu.viewBookmarksButton.addEventListener('click', () => {
-    load_url(elements.webView, `file://${path.resolve(__dirname, '../../pages/bookmarks.html')}`)
+    load_url(elements.webView, make_file_url_from_relative('../pages/bookmarks.html'), true)
     close_popup_menu()
     //close_bar()
     elements.webView.focus()

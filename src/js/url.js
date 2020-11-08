@@ -1,3 +1,5 @@
+const path = require('path')
+
 const forbidden_url_chars = [ ' ' ]
 const url_regex_match = /^([0-9]|[a-z]|-)+\.[a-z]+$/
 
@@ -27,12 +29,13 @@ const is_valid_url = (url) => {
  * Loads a string or searches for it with duckduckgo
  * @param {WebviewTag} wv
  * @param {string} query
+ * @param {boolean} force Load without checking if the url is valid
  */
-const load_url = (wv, query) => {
-    if (is_valid_url(query)) {
+const load_url = (wv, query, force) => {
+    if (force || is_valid_url(query)) {
         let url = query
 
-        if (!query.startsWith('http://') && !query.startsWith('https://') && !query.startsWith('file://'))
+        if (!force && !query.startsWith('http://') && !query.startsWith('https://') && !query.startsWith('file://'))
             url = `http://${query}`
 
         wv.loadURL(url)
@@ -41,4 +44,9 @@ const load_url = (wv, query) => {
     }
 }
 
-module.exports = { load_url }
+const make_file_url_from_relative = (relative) => {
+    let url = path.resolve(__dirname, relative)
+    return `file://${url.split(path.sep).join(path.posix.sep)}`
+}
+
+module.exports = { load_url, make_file_url_from_relative }
