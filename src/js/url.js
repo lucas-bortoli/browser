@@ -1,4 +1,5 @@
 const forbidden_url_chars = [ ' ' ]
+const url_regex_match = /^([0-9]|[a-z]|-)+\.[a-z]+$/
 
 /**
  * Checks if a string is good enough to pass off as an URL for us
@@ -9,13 +10,15 @@ const forbidden_url_chars = [ ' ' ]
 const is_valid_url = (url) => {
     let valid = false
 
-    if (url.includes('.'))
+    if (url_regex_match.test(url))
         valid = true
 
     for (let c of forbidden_url_chars) {
         if (url.includes(c))
             valid = false
     }
+
+    console.log(`URL validation: ${url} is ${valid ? '':'not '}a valid URL.`)
 
     return valid
 }
