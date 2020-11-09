@@ -8,11 +8,12 @@ const path = require('path')
 const expose_apis = () => {
     window.__$_require = require
     window.__$_process = process
+    window.__$_datastore = require('../data_store')
 }
 
 const is_trusted = () => {
     // only trust pages inside ../../pages/
-    return path.resolve(path.join(__dirname, '../../pages')) === path.resolve(path.join(location.pathname, '..')) &&
+    return path.resolve(path.join(__dirname, '../../pages')) === path.resolve(path.join(location.pathname.substring(1), '..')) &&
         location.protocol === 'file:'
 }
 
