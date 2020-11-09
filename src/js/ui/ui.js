@@ -15,7 +15,8 @@ const UI = {
             homeButton: document.querySelector('#button-home'),
             devToolsButton: document.querySelector('#open-dev-tools'),
             historyButton: document.querySelector('#button-history'),
-            viewBookmarksButton: document.querySelector('#button-view-bookmarks')
+            viewBookmarksButton: document.querySelector('#button-view-bookmarks'),
+            addBookmarkButton: document.querySelector('#button-add-to-bookmarks')
         }
     },
     open_popup_menu: () => UI.elements.popupMenu.popupMenu.classList.add('open'),

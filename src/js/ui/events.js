@@ -1,6 +1,7 @@
 const path = require('path')
 const { elements, open_bar, open_popup_menu, close_bar, close_popup_menu } = require('./ui')
 const { load_url, make_file_url_from_relative } = require('../url')
+const bookmarks = require('../bookmarks')
 
 elements.webView.addEventListener('ipc-message', e => {
     if (e.channel !== 'webview-task') return
@@ -80,4 +81,9 @@ elements.popupMenu.viewBookmarksButton.addEventListener('click', () => {
     close_popup_menu()
     //close_bar()
     elements.webView.focus()
+})
+
+elements.popupMenu.addBookmarkButton.addEventListener('click', () => {
+    bookmarks.add_bookmark(elements.webView.getTitle(), elements.webView.getURL())
+    close_popup_menu()
 })
