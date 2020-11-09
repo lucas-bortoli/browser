@@ -8,6 +8,7 @@
     "electron": "^10.1.5",
     "electron-context-menu": "^2.3.0",
     "electron-store": "^6.0.1",
+    "escape-html": "^1.0.3",
     "shortcuts": "^1.6.1",
     "valid-url": "^1.0.9"
   }
