@@ -2,6 +2,7 @@ const path = require('path')
 const { elements, open_bar, open_popup_menu, close_bar, close_popup_menu } = require('./ui')
 const { load_url, make_file_url_from_relative } = require('../url')
 const bookmarks = require('../bookmarks')
+const history = require('../history')
 
 elements.webView.addEventListener('ipc-message', e => {
     if (e.channel !== 'webview-task') return
@@ -32,6 +33,10 @@ elements.webView.addEventListener('load-commit', () => {
 elements.webView.addEventListener('page-title-updated', ev => {
     elements.statusMenu.urlInput.value = elements.webView.src
     document.title = ev.title
+})
+
+elements.webView.addEventListener('did-finish-load', () => {
+    history.add_history_entry(elements.webView.getTitle(), elements.webView.getURL())
 })
 
 document.addEventListener('keyup', e => {
