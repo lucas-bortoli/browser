@@ -36,6 +36,9 @@ elements.webView.addEventListener('page-title-updated', ev => {
 })
 
 elements.webView.addEventListener('did-finish-load', () => {
+    if (new URL(elements.webView.getURL()).protocol === 'file:')
+        return
+
     history.add_history_entry(elements.webView.getTitle(), elements.webView.getURL())
 })
 
