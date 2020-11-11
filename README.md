@@ -1,6 +1,7 @@
 # Browser
 Basic Web Browser
 
+![Preview](https://i.imgur.com/Eut97yd.png)
 
 ### Install
 ```sh
